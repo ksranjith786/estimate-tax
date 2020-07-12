@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html>
+<title>COVID19 Tracker</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+    html,
+    body,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5 {
+        font-family: "Raleway", sans-serif
+    }
+</style>
+
+<body class="w3-light-grey">
+
+    <!-- Top container -->
+    <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
+        <span class="w3-bar-item w3-right">Income Tax Payable</span>
+    </div>
+
+    <!-- !PAGE CONTENT! -->
+    <div class="w3-main" style="margin-left:10px;margin-top:43px;">
+
+        <!-- Header -->
+        <header class="w3-container" style="padding-top:22px">
+            <div class="w3-half">
+                <h1><b><i class="fa fa-dashboard"></i> {{firstName}} </b></h1>
+            </div>
+            <div class="w3-half">
+                <p align="right">
+                    <font size=2><i>
+                            <script> document.write(new Date().toISOString()); </script></i></font>
+                </p>
+            </div>
+        </header>
+
+        <div class="w3-row-padding w3-margin-bottom">
+            <!--<div class="w3-col" style="width: 20%"> -->
+            <div class="w3-quarter">
+                <div class="w3-container w3-blue w3-padding-16">
+                    <div class="w3-left"><i class="fa fa-user-md w3-xxxlarge"></i></div>
+                    <div class="w3-right">
+                        <h2>{{grossIncome}}</h2>
+                        <p align='right'>
+                            <font size=3><i>+{{grossIncomePerMonth}}</i></font>
+                        </p>
+                    </div>
+                    <div class="w3-clear"></div>
+                    <h4>Gross Income</h4>
+                </div>
+            </div>
+            <!--<div class="w3-col" style="width: 20%"> -->
+            <div class="w3-quarter">
+                <div class="w3-container w3-orange w3-text-white w3-padding-16">
+                    <div class="w3-left"><i class="fa fa-heartbeat w3-xxxlarge"></i></div>
+                    <div class="w3-right">
+                        <h2>{{netIncome}}</h2>
+                        <p align='right'>
+                            <font size=3><i>+{{netIncomePerMonth}}</i></font>
+                        </p>
+                    </div>
+                    <div class="w3-clear"></div>
+                    <h4>Net Income</h4>
+                </div>
+            </div>
+            <!--<div class="w3-col" style="width: 20%"> -->
+            <div class="w3-quarter">
+                <div class="w3-container w3-green w3-padding-16">
+                    <div class="w3-left"><i class="fa fa-wheelchair-alt w3-xxxlarge"></i></div>
+                    <div class="w3-right">
+                        <h2>{{taxPayableNew}}</h2>
+                        <p align='right'>
+                            <font size=3><i>+{{taxPayablePerMonthNew}}</i></font>
+                        </p>
+                    </div>
+                    <div class="w3-clear"></div>
+                    <h4>Tax Payable with New Regime</h4>
+                </div>
+            </div>
+            <!--<div class="w3-col" style="width: 20%"> -->
+            <div class="w3-quarter">
+                <div class="w3-container w3-red w3-padding-16">
+                    <div class="w3-left"><i class="fa fa-hotel w3-xxxlarge"></i></div>
+                    <div class="w3-right">
+                        <h2>{{taxPayableOld}}</h2>
+                        <p align='right'>
+                            <font size=3><i>+{{taxPayablePerMonthOld}}</i></font>
+                        </p>
+                    </div>
+                    <div class="w3-clear"></div>
+                    <h4>Tax Payable with New Regime</h4>
+                </div>
+            </div>
+        </div>
+
+        <div class="w3-panel">
+            <div class="w3-row-padding" style="margin:0 -16px">
+                <div class="w3-half">
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-white" style="width:100%">
+                            <b>Utilization of Income Tax sections</b></div>
+                    </div>
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-teal" style="width:{{rate80c}}%">
+                            <small>80C {{rate80c}}%</small></div>
+                    </div>
+
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-pale-red" style="width:{{rate80d}}%">
+                            <small>80D {{rate80d}}%</small></div>
+                    </div>
+
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-orange" style="width:{{rate80ccd1}}%">
+                            <small>80CCD(1) {{rate80ccd1}}%</small></div>
+                    </div>
+
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-yellow" style="width:{{rate80ccd2}}%">
+                            <small>80CCD(2) {{rate80ccd2}}%</small></div>
+                    </div>
+
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-purple" style="width:{{rate24}}%">
+                            <small>Section (24) {{rate24}}%</small></div>
+                    </div>
+
+                    <div class="w3-grey">
+                        <div class="w3-container w3-center w3-padding w3-aqua" style="width:{{rate80e}}%">
+                            <small>80E {{rate80e}}%</small></div>
+                    </div>
+
+                </div>
+
+                <div class="w3-half" style="text-align: right;">
+                    <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                        <thead>
+                            <tr>
+                                <th>Particulars</th>
+                                <th style="text-align: right;">New regime</th>
+                                <th style="text-align: right;">Old regime</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><b>Gross income</b></td>
+                                <td style="text-align: right;"><b>₹ {{ grossIncome }}</b></td>
+                                <td style="text-align: right;"><b>₹ {{ grossIncome }}</b></td>
+                            </tr>
+                            <tr>
+                                <td>Less: Deductions under 80C</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_80c }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Standard Deduction (Medical & Travel Allowance)</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ 50,000</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Employee Contribution to NPS under 80CCD1</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_80ccd1 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less: Employer Contribution to NPS under 80CCD2</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_80ccd2 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less : HRA deduction as per section 10(13A)</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_10 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less : Income from other Sources as per section 24</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_24 }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less : Interest on Savings under 80TTA</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_80tta }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less : Interest on Education Loan under 80E</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ total_80e }}</td>
+                            </tr>
+                            <tr>
+                                <td>Less : Amount Exempted from Tax</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ {{ taxExempted }}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Taxable Income</b></td>
+                                <td style="text-align: right;"><b>₹ {{ taxPayableNew }}</b></td>
+                                <td style="text-align: right;"><b>₹ {{ totalIncomeAfterDeductions }}</b></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w3-container">
+        <h3>Income Tax Slabs &amp; Rates 2020-2021</h3>
+        <div class="w3-twothird">
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <thead>
+                    <tr>
+                        <th>Income Tax Slab</th>
+                        <th>Tax rates as per new regime</th>
+                        <th>Tax rates as per old regime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>₹0 - ₹2,50,000</td>
+                        <td>Nil</td>
+                        <td>Nil</td>
+                    </tr>
+                    <tr>
+                        <td>₹2,50,001 - ₹ 5,00,000</td>
+                        <td>5%</td>
+                        <td>5%</td>
+                    </tr>
+                    <tr>
+                        <td>₹5,00,001 - ₹ 7,50,000</td>
+                        <td>₹12500 + 10% of total income exceeding ₹5,00,000</td>
+                        <td>₹12500 + 20% of total income exceeding ₹5,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>₹7,50,001 - ₹ 10,00,000</td>
+                        <td>₹37500 + 15% of total income exceeding ₹7,50,000</td>
+                        <td>₹62500 + 20% of total income exceeding ₹7,50,000</td>
+                    </tr>
+                    <tr>
+                        <td>₹10,00,001 - ₹12,50,000</td>
+                        <td>₹75000 + 20% of total income exceeding ₹10,00,000</td>
+                        <td>₹112500 + 30% of total income exceeding ₹10,00,000</td>
+                    </tr>
+                    <tr>
+                        <td>₹12,50,001 - ₹15,00,000</td>
+                        <td>₹125000 + 25% of total income exceeding ₹12,50,000</td>
+                        <td>₹187500 + 30% of total income exceeding ₹12,50,000</td>
+                    </tr>
+                    <tr>
+                        <td>Above ₹ 15,00,000</td>
+                        <td>₹187500 + 30% of total income exceeding ₹15,00,000</td>
+                        <td>₹262500 + 30% of total income exceeding ₹15,00,000</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <hr>
+    <hr>
+    <hr>
+
+    <div class="w3-container">
+        <div class="w3-half">
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <thead>
+                    <tr>
+                        <th>Taxes payable as per slab rates</th>
+                        <th style="text-align: right;">New regime</th>
+                        <th style="text-align: right;">Old regime</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>₹0 - ₹2,50,000</td>
+                        <td style="text-align: right;">₹ 0</td>
+                        <td style="text-align: right;">₹ 0</td>
+                    </tr>
+                    <tr>
+                        <td>₹2,50,001 - ₹ 5,00,000</td>
+                        <td style="text-align: right;">₹ 12,500</td>
+                        <td style="text-align: right;">₹ 12,500</td>
+                    </tr>
+                    <tr>
+                        <td>₹5,00,001 - ₹ 7,50,000</td>
+                        <td style="text-align: right;">₹ 25,000</td>
+                        <td style="text-align: right;">₹ 40,000</td>
+                    </tr>
+                    <tr>
+                        <td>₹7,50,001 - ₹ 10,00,000</td>
+                        <td style="text-align: right;">₹ 37,500</td>
+                        <td style="text-align: right;">₹ 0</td>
+                    </tr>
+                    <tr>
+                        <td>₹10,00,001 - ₹12,50,000</td>
+                        <td style="text-align: right;">₹ 20,000</td>
+                        <td style="text-align: right;">₹ 0</td>
+                    </tr>
+                    <tr>
+                        <td><b>Total taxes</b></td>
+                        <td style="text-align: right;"><b>₹ {{ total_tax_new }}</b></td>
+                        <td style="text-align: right;"><b>₹ {{ total_tax_old }}</b></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <!-- Footer -->
+    <footer class="w3-container w3-padding-16 w3-light-grey">
+        <p>
+            <font size=2>Developed by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank"><b>Ranjith K
+                        S</b></font></a>
+        </p>
+        <p>
+            <font size=1>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a>
+            </font>
+        </p>
+    </footer>
+
+    <!-- End page content -->
+</body>
+
+</html>
