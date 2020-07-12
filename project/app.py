@@ -1,21 +1,30 @@
 from flask import Flask, Blueprint
 
+# Blueprints
+from .routes.home import home_bp
+from .routes.details import details_bp 
+from .routes.estimate import estimate_bp 
+
+blueprints = ( home_bp, details_bp, estimate_bp )
+
 def create_app():
     app = Flask(__name__)
-
-    from .routes.home import home_bp
-    app.register_blueprint(home_bp)
+    
+    register_blueprint(app, blueprints)
+    # Configure explicit url routes to home blueprint
     app.add_url_rule('/', endpoint='index')
     app.add_url_rule('/home', endpoint='home')
-
-    from .routes.details import details_bp 
-    app.register_blueprint(details_bp)
-
-    from .routes.estimate import estimate_bp 
-    app.register_blueprint(estimate_bp)
     
+    error_pages(app)
+
     return app
 # end create_app
+
+def register_blueprint(app, blueprints):
+    for blueprint in blueprints:
+        app.register_blueprint(blueprint)
+# end register_blueprint
+
 
 def error_pages(app):
     # HTTP error pages definitions
