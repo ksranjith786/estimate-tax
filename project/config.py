@@ -1,2 +1,1 @@
-DEBUG = True
-SECRET_KEY = 'change me please'
+SECRET_KEY = 'changeit'
