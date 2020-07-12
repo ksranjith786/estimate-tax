@@ -148,10 +148,10 @@
               <i class="fas fa-city"></i>
               &nbsp; &nbsp; &nbsp; &nbsp;
               <label>
-                <input type="radio" class="hra_city" name="hra_city" value="Metro" /> Metro &nbsp; &nbsp;
+                <input name="hra_city_type" type="radio" class="hra_city_type" value="METRO"/> Metro &nbsp; &nbsp;
               </label>
               <label>
-                <input type="radio" class="hra_city" name="hra_city" value="Non Metro" checked/> Non Metro
+                <input name="hra_city_type" type="radio" class="hra_city_type" value="NON METRO" checked/> Non Metro
               </label>
             </div>
           </div>
@@ -164,7 +164,7 @@
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fas fa-rupee-sign"></i></span>
-              <input name="variable_pay" id="variable_pay" placeholder="0" class="form-control" type="text">
+              <input name="dearness_allowance" id="dearness_allowance" placeholder="0" class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -232,23 +232,35 @@
         <!-- Text input-->
 
         <div class="form-group">
-          <label class="col-md-4 control-label">Personal Allowance</label>
+          <label class="col-md-4 control-label">Special Allowance</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fas fa-icons"></i></span>
-              <input name="personal_allowance" id="personal_allowance" placeholder="" class="form-control" type="text">
+              <input name="special_allowance" id="special_allowance" placeholder="" class="form-control" type="text">
             </div>
           </div>
         </div>
 
         <!-- Text input-->
-
+<!--
         <div class="form-group">
-          <label class="col-md-4 control-label">Others</label>
+          <label class="col-md-4 control-label">Other Allowance</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fas fa-retweet"></i></span>
               <input name="other_allowance" id="other_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+-->
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Taxable Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-cut"></i></span>
+              <input name="taxable_allowance" id="taxable_allowance" placeholder="" class="form-control" type="text">
             </div>
           </div>
         </div>
@@ -287,6 +299,27 @@
             </div>
           </div>
         </div>
+
+        <!-- radio checks -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Do you pay for Self or Parents?</label>
+          <div class="col-md-4">
+            <div class="radio">
+              &nbsp;
+              <i class="fas fa-city"></i>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>
+                <input name="80D_type" type="radio" class="80D_type" value="SELF" checked/> Self &nbsp; &nbsp;
+              </label>
+              <label>
+                <input name="80D_type" type="radio" class="80D_type" value="PARENTS"/> Parents
+              </label>
+              <label>
+                <input name="80D_type" type="radio" class="80D_type" value="BOTH"/> Both
+              </label>
+            </div>
+          </div>
+        </div>        
 
         <!-- Text input-->
 
@@ -375,6 +408,18 @@
         <!-- Text input-->
 
         <div class="form-group">
+          <label class="col-md-4 control-label">Education Loan (Interest)</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-book-open"></i></span>
+              <input name="education_loan_interest" id="education_loan_interest" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
           <label class="col-md-4 control-label">Equity Linked Savings Scheme</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
@@ -387,11 +432,47 @@
         <!-- Text input-->
 
         <div class="form-group">
+          <label class="col-md-4 control-label">NPS contribution by Employee</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-coins"></i></span>
+              <input name="employee_nps_paid" id="employee_nps_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">NPS contribution by Employer</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-file-invoice"></i></span>
+              <input name="employer_nps_paid" id="employer_nps_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
           <label class="col-md-4 control-label">Government Schemes</label>
           <div class="col-md-4 inputGroupContainer">
             <div class="input-group">
               <span class="input-group-addon"><i class="fas fa-bullhorn"></i></span>
               <input name="govt_schemes" id="govt_schemes" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Interest earned on Savings</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="fas fa-hand-holding-usd"></i></span>
+              <input name="savings_interest" id="savings_interest" placeholder="" class="form-control" type="text">
             </div>
           </div>
         </div>
