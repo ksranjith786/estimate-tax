@@ -25,9 +25,9 @@ pip install -r requirements.txt
 
 ## Execution Steps
 ```
-$ export FLASK_APP=project
-$ export FLASK_ENV=development
-$ flask run
+export FLASK_APP=project
+export FLASK_ENV=development
+flask run
 ```
 
 ## Initial Steps
