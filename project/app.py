@@ -2,9 +2,9 @@ from flask import Flask, Blueprint
 from os import environ
 
 # Blueprints
-from .routes.home import home_bp
-from .routes.details import details_bp 
-from .routes.estimate import estimate_bp 
+from routes.home import home_bp
+from routes.details import details_bp 
+from routes.estimate import estimate_bp 
 
 blueprints = ( home_bp, details_bp, estimate_bp )
 
