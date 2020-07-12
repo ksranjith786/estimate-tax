@@ -1,4 +1,13 @@
 # Estimate Tax
+This is a Tax estimator for the drawn salary. Provide your details like Basic Pay, Investments, Deductions, etc so that we will let you know the Payable Tax amount.
+I have built its backend using Python, Flask and REST API.
+It is deployed on Heroku cloud platform.
+
+## LIVE on
+
+https://get-tax.herokuapp.com
+
+Please click [here](https://get-tax.herokuapp.com) to view the LIVE app.
 
 ## Source checkout
 ```
