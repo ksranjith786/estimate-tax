@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <meta name="description"
+    content="Provide your Basic Pay, Investments, Deductions, etc so that we will let you know the Payable Tax amount">
+  <meta name="author" content="Ranjith KS">
+
+  <title>Salary Details</title>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-validator/0.4.5/js/bootstrapvalidator.min.js"></script>
+  <script src="http://ajax.microsoft.com/ajax/jquery.validate/1.7/additional-methods.js"></script>
+
+</head>
+
+<body>
+
+  <form class="well form-horizontal" action="/estimate" method="POST" id="contact_form">
+  <div id="basic_details" class="container">
+    
+      <fieldset>
+        <!-- Form Name -->
+        <legend class="center">Basic Details!</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">First Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="first_name" id="first_name" placeholder="First Name" class="form-control" type="text" maxlength="15">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Last Name</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input name="last_name" id="last_name" placeholder="Last Name" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">E-Mail</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+              <input name="email" id="email" placeholder="E-Mail Address" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Phone #</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+              <input name="phone" id="phone" placeholder="(555)333-1212" maxlength="13" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">City</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+              <input name="city" maxlength="15" placeholder="City" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Select Basic -->
+        <!-- Button -->
+        <!--
+          <div class="form-group">
+            <label class="col-md-4 control-label"></label>
+            <div class="col-md-4">
+              <button class="btn btn-warning" onclick="toggleSalaryDetails()">Next <span class="glyphicon glyphicon-step-forward"></span></button>
+            </div>
+          </div>
+          -->
+      </fieldset>
+    <!--/form-->
+
+  </div> <!-- Basic Details -->
+
+
+  <div id="salary_details" class="container">
+    <!--form class="well form-horizontal" action="index.php" method="post" id="contact_form"-->
+      <fieldset>
+        <!-- Form Name -->
+        <legend class="center">Salary Details!</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Basic</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-usd"></i></span>
+              <input name="basic_pay" id="basic_pay" placeholder="25000" class="form-control" type="text" maxlength="15">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">House Rental Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="hra_allowance" id="hra_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- radio checks -->
+        <div class="form-group">
+          <label class="col-md-4 control-label">Do you live in?</label>
+          <div class="col-md-4">
+            <div class="radio">
+              &nbsp;
+              <i class="glyphicon glyphicon-home"></i>
+              &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>
+                <input type="radio" class="hra_city" name="hra_city" value="Metro" /> Metro &nbsp; &nbsp;
+              </label>
+              <label>
+                <input type="radio" class="hra_city" name="hra_city" value="Non Metro" checked/> Non Metro
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Dearness Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-gbp"></i></span>
+              <input name="variable_pay" id="variable_pay" placeholder="0" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Leave Travel Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-plane"></i></span>
+              <input name="lta_allowance" id="lta_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Food/Meal Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon glyphicon-cutlery"></i></span>
+              <input name="meal_allowance" id="meal_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Fuel Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-tint"></i></span>
+              <input name="fuel_allowance" id="fuel_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Cab Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-bed"></i></span>
+              <input name="cab_allowance" id="cab_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Internet Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-globe"></i></span>
+              <input name="internet_allowance" id="internet_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Personal Allowance</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-shopping-cart"></i></span>
+              <input name="personal_allowance" id="personal_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Others</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-gift"></i></span>
+              <input name="other_allowance" id="other_allowance" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+      </fieldset>
+
+  </div> <!-- Salary Details -->
+
+
+  <div id="investment_details" class="container">
+    <!--form class="well form-horizontal" action="index.php" method="post" id="contact_form"-->
+      <fieldset>
+        <!-- Form Name -->
+        <legend class="center">Investment Details!</legend>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Insurance(s) covers under 80C</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+              <input name="80c_insurance_paid" id="80c_insurance_paid" placeholder="25000" class="form-control" type="text" maxlength="15">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Insurance(s) covers under 80D</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-plus-sign"></i></span>
+              <input name="80d_insurance_paid" id="80d_insurance_paid" placeholder="10000" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Public Provident Fund</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
+              <input name="ppf_paid" id="ppf_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Voluntary Provident Fund</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-piggy-bank"></i></span>
+              <input name="vpf_paid" id="vpf_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Home Loan (Principal)</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="home_loan_principal" id="home_loan_principal" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Home Loan (Interest)</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+              <input name="home_loan_interest" id="home_loan_interest" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Rent Paid</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-triangle-right"></i></span>
+              <input name="rent_paid" id="rent_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Rent Received</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-triangle-left"></i></span>
+              <input name="rent_received" id="rent_received" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+        
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">House Tax</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lamp"></i></span>
+              <input name="house_tax" id="house_tax" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Equity Linked Savings Scheme</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-knight"></i></span>
+              <input name="elss_paid" id="elss_paid" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Text input-->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label">Government Schemes</label>
+          <div class="col-md-4 inputGroupContainer">
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-magnet"></i></span>
+              <input name="govt_schemes" id="govt_schemes" placeholder="" class="form-control" type="text">
+            </div>
+          </div>
+        </div>
+
+        <!-- Button -->
+
+        <div class="form-group">
+          <label class="col-md-4 control-label"></label>
+          <div class="col-md-4">
+            <button type="submit" class="btn btn-warning">Estimate <span class="glyphicon glyphicon-send"></span></button>
+          </div>
+        </div>
+
+      </fieldset>
+
+  </div> <!-- Investment Details -->
+</form>
+</body>
