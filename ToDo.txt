@@ -1,0 +1,5 @@
+1. details.html page can use collapse or hide/show or multi form options
+2. Icons has to be picked from various packages; Eg. Cab Allowance, Dollar and Pound sign
+3. Validations
+4. Add Mandatory & Optional fields
+5. Add Disclaimers: Personal Info is optional, if provided we will not save too;

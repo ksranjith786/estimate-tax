@@ -66,3 +66,9 @@ def error_pages(app):
     def server_error_page(error):
         return render_template("misc/500.html"), 500
 # end error_pages
+
+
+if __name__ == '__main__':
+    app = create_app()
+    app.run()
+# end main()
