@@ -57,7 +57,7 @@ $(document).ready(function () {
                         message: 'Please supply your city'
                     }
                 }
-            },
+            },*/
             age: {
                 validators: {
                     notEmpty: {
@@ -66,16 +66,16 @@ $(document).ready(function () {
                     numeric: {
                         message: 'The value is not a valid number'
                     },
-                    lessThan: {
+                    greaterThan: {
                         value: 18,
                         message: 'Please enter a value more than or equal to 18'
                     },
-                    greaterThan: {
+                    lessThan: {
                         value: 100,
                         message: 'Please enter a value less than or equal to 100'
                     },
                 }
-            },*/
+            },
             basic_pay: {
                 validators: {
                     notEmpty: {
@@ -84,11 +84,11 @@ $(document).ready(function () {
                     numeric: {
                         message: 'The value is not a valid number'
                     },
-                    lessThan: {
+                    greaterThan: {
                         value: 1000,
                         message: 'Please enter a value more than or equal to 1000'
                     },
-                    greaterThan: {
+                    lessThan: {
                         value: 1000000000,
                         message: 'Please enter a value less than or equal to 1000000000'
                     }
