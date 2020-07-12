@@ -1,1 +1,1 @@
-web: gunicorn --chdir project app:create_app()
+web: gunicorn --chdir project "app:create_app()"
