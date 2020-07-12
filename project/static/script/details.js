@@ -7,16 +7,6 @@ $(document).ready(function () {
             validating: 'glyphicon glyphicon-refresh'
         },
         fields: {
-            test_field: {
-                validators: {
-                    stringLength: {
-                        min: 9,
-                    },
-                    notEmpty: {
-                        message: 'Incorrect'
-                    }
-                }
-            },
             first_name: {
                 validators: {
                     stringLength: {
@@ -36,7 +26,7 @@ $(document).ready(function () {
                         message: 'Please supply your last name'
                     }
                 }
-            },
+            },/*
             email: {
                 validators: {
                     notEmpty: {
@@ -68,17 +58,39 @@ $(document).ready(function () {
                     }
                 }
             },
-            basic_pay: {
+            age: {
                 validators: {
                     notEmpty: {
-                        message: 'Quantity is required'
+                        message: 'Age is required'
                     },
                     numeric: {
                         message: 'The value is not a valid number'
                     },
                     lessThan: {
-                        value: 45,
-                        message: 'Please enter a value less than or equal to %s'
+                        value: 18,
+                        message: 'Please enter a value more than or equal to 18'
+                    },
+                    greaterThan: {
+                        value: 100,
+                        message: 'Please enter a value less than or equal to 100'
+                    },
+                }
+            },*/
+            basic_pay: {
+                validators: {
+                    notEmpty: {
+                        message: 'Basic Pay is required'
+                    },
+                    numeric: {
+                        message: 'The value is not a valid number'
+                    },
+                    lessThan: {
+                        value: 1000,
+                        message: 'Please enter a value more than or equal to 1000'
+                    },
+                    greaterThan: {
+                        value: 1000000000,
+                        message: 'Please enter a value less than or equal to 1000000000'
                     }
                 }
             }
