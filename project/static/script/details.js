@@ -93,6 +93,18 @@ $(document).ready(function () {
                         message: 'Please enter a value less than or equal to 1000000000'
                     }
                 }
+            },
+            hra_allowance: {
+                validators: {
+                    numeric: {
+                        message: 'The value is not a valid number'
+                    },
+                    between: {
+                        min: 0,
+                        max: 10000000,
+                        message: 'Please enter a value between 0 and 10000000'
+                    }
+                }
             }
         }
     })

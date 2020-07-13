@@ -15,7 +15,7 @@ def create_app():
     
     register_blueprint(app, blueprints)
 
-    error_pages(app)
+    # error_pages(app)
 
     return app
 # end create_app
