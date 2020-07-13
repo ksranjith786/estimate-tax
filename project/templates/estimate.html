@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-<title>COVID19 Tracker</title>
+<title>Estimate Tax</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -156,14 +156,19 @@
                                 <td style="text-align: right;"><b>₹ {{ grossIncome }}</b></td>
                             </tr>
                             <tr>
+                                <td>Less: Standard Deduction (Medical & Travel Allowance)</td>
+                                <td style="text-align: right;">₹ 0</td>
+                                <td style="text-align: right;">₹ 50,000</td>
+                            </tr>
+                            <tr>
                                 <td>Less: Deductions under 80C</td>
                                 <td style="text-align: right;">₹ 0</td>
                                 <td style="text-align: right;">₹ {{ total_80c }}</td>
                             </tr>
                             <tr>
-                                <td>Less: Standard Deduction (Medical & Travel Allowance)</td>
+                                <td>Less: Deductions under 80D</td>
                                 <td style="text-align: right;">₹ 0</td>
-                                <td style="text-align: right;">₹ 50,000</td>
+                                <td style="text-align: right;">₹ {{ total_80d }}</td>
                             </tr>
                             <tr>
                                 <td>Less: Employee Contribution to NPS under 80CCD1</td>

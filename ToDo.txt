@@ -1,7 +1,9 @@
-1. details.html page can use collapse or hide/show or multi form options
+1. details.html page can use collapse or hide/show or multi form options - ToDo
 2. Icons has to be picked from various packages; Eg. Cab Allowance, Dollar and Pound sign - Done
-3. Validations
-4. Add Mandatory & Optional fields
-5. Add Disclaimers: Personal Info is optional, if provided we will not save too;
+3. Validations- Done
+4. Add Mandatory & Optional fields - ToDo
+5. Add Disclaimers: Personal Info is optional, if provided we will not save too; - ToDo
 6. Health Insurance Premium change based on Self/Family/HealthCheckups - Done
 7. NPS - Done
+8. 80D is not shown on Particulars - Done
+9. 
