@@ -49,7 +49,7 @@ def estimate():
     taxDetails = calculateTax(details)
     #return jsonify(details, taxDetails)
 
-    return render_template('estimate.html', firstName = details['basic']['first_name'],
+    return render_template('estimate.html', firstName = details['basic']['first_name'], lastName = details['basic']['last_name'], 
                         grossIncome = taxDetails['grossIncome'], netIncome = taxDetails['netIncome'],
                         grossIncomePerMonth = taxDetails['grossIncome'] // 12, netIncomePerMonth = taxDetails['netIncome'] // 12,
                         taxPayableNew = taxDetails['taxPayableNew'], taxPayableOld = taxDetails['taxPayableOld'],

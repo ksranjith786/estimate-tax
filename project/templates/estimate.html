@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script> <!-- For icons -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -31,7 +32,7 @@
         <!-- Header -->
         <header class="w3-container" style="padding-top:22px">
             <div class="w3-half">
-                <h1><b><i class="fa fa-dashboard"></i> {{firstName}} </b></h1>
+                <h1><b><i class="fas fa-user-alt"></i> {{firstName}}&nbsp;{{lastName}} </b></h1>
             </div>
             <div class="w3-half">
                 <p align="right">
@@ -45,7 +46,7 @@
             <!--<div class="w3-col" style="width: 20%"> -->
             <div class="w3-quarter">
                 <div class="w3-container w3-blue w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-user-md w3-xxxlarge"></i></div>
+                    <div class="w3-left"><i class="far fa-money-bill-alt w3-xxxlarge"></i></div>
                     <div class="w3-right">
                         <h2>{{grossIncome}}</h2>
                         <p align='right'>
@@ -59,7 +60,7 @@
             <!--<div class="w3-col" style="width: 20%"> -->
             <div class="w3-quarter">
                 <div class="w3-container w3-orange w3-text-white w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-heartbeat w3-xxxlarge"></i></div>
+                    <div class="w3-left"><i class="fas fa-hand-holding-usd w3-xxxlarge"></i></div>
                     <div class="w3-right">
                         <h2>{{netIncome}}</h2>
                         <p align='right'>
@@ -73,7 +74,7 @@
             <!--<div class="w3-col" style="width: 20%"> -->
             <div class="w3-quarter">
                 <div class="w3-container w3-green w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-wheelchair-alt w3-xxxlarge"></i></div>
+                    <div class="w3-left"><i class="fas fa-handshake w3-xxxlarge"></i></div>
                     <div class="w3-right">
                         <h2>{{taxPayableNew}}</h2>
                         <p align='right'>
@@ -87,7 +88,7 @@
             <!--<div class="w3-col" style="width: 20%"> -->
             <div class="w3-quarter">
                 <div class="w3-container w3-red w3-padding-16">
-                    <div class="w3-left"><i class="fa fa-hotel w3-xxxlarge"></i></div>
+                    <div class="w3-left"><i class="far fa-handshake	w3-xxxlarge"></i></div>
                     <div class="w3-right">
                         <h2>{{taxPayableOld}}</h2>
                         <p align='right'>
@@ -95,7 +96,7 @@
                         </p>
                     </div>
                     <div class="w3-clear"></div>
-                    <h4>Tax Payable with New Regime</h4>
+                    <h4>Tax Payable with Old Regime</h4>
                 </div>
             </div>
         </div>
